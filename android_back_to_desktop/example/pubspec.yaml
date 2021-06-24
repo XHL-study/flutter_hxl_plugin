@@ -16,7 +16,7 @@ dependencies:
     git:
       url: git://github.com/XHL-study/flutter_hxl_plugin.git
       path: android_back_to_desktop
-      ref: 1.0.0 # some tag
+      ref: 1.0.1 # some tag
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
