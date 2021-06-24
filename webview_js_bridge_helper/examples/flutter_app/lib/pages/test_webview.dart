@@ -29,7 +29,7 @@ class _WebViewPageState extends State<WebViewPage> {
     tec = TextEditingController();
     // tec?.value = TextEditingValue(text: 'https://www.baidu.com');
     tec?.value = TextEditingValue(
-        text: 'http://127.0.0.1:8808/test/test.html');
+        text: 'http://xxx.xxx.xxx.xxx:8999/lib/test.html');
 
     wfji = WebviewJsBridgeHelper();
   }
@@ -72,7 +72,6 @@ class _WebViewPageState extends State<WebViewPage> {
           );
 
           //把结果回调给网页
-
           if (str == 'ok') {
             await jmh.success("你选择了OK");
           } else {
@@ -87,7 +86,7 @@ class _WebViewPageState extends State<WebViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title ?? 'cs'),
+        title: Text(title ?? 'test webview'),
       ),
       body: Stack(
         children: [
@@ -97,7 +96,6 @@ class _WebViewPageState extends State<WebViewPage> {
               height: MediaQuery.of(context).size.height,
               // height: 300,
               child: WebView(
-                // initialUrl: 'http://192.168.3.124:8808/test/test.html',
                 initialUrl: tec?.value.text,
                 javascriptMode: JavascriptMode.unrestricted,
                 javascriptChannels: wfji!.initChannels(_jsChanelApi(context)),

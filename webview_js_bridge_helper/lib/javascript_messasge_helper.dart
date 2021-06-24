@@ -4,9 +4,9 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class JavascriptMessageHelper {
   final JavascriptMessage rawMessage;
+  Map<String, dynamic>? message;
 
   final WebViewController? _wvc;
-  Map<String, dynamic>? message;
   String? _callback;
 
   JavascriptMessageHelper(this.rawMessage, this._wvc) {

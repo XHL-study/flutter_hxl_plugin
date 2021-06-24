@@ -18,3 +18,9 @@
 * TODO:
     edit javascript_messasge_helper.dart
     Modified usage example
+
+## 1.0.0
+
+* TODO:
+    1. Delete unnecessary files
+    2. Add demo example
