@@ -12,3 +12,9 @@
     add javascript_messasge_helper.dart
     Modified usage example
     new tag
+
+## 0.0.5
+
+* TODO:
+    edit javascript_messasge_helper.dart
+    Modified usage example

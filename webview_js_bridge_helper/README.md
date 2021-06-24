@@ -16,4 +16,4 @@ A new Flutter package with webview_flutter js bridge helper.
 * test.html
 
 # customize
-* lock RegisterFlutterApi.js
+* look RegisterFlutterApi.js

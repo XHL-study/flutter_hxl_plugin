@@ -40,7 +40,7 @@ class _WebViewPageState extends State<WebViewPage> {
     chanelList.add(JavascriptChannel(
         name: 'showDialog',
         onMessageReceived: (JavascriptMessage message) async {
-          JavascriptMessageHelper jmh = JavascriptMessageHelper(message);
+          JavascriptMessageHelper jmh = JavascriptMessageHelper(message,wvc);
           dynamic str = await showDialog(
             context: context,
             builder: (c) {
@@ -74,10 +74,9 @@ class _WebViewPageState extends State<WebViewPage> {
           //把结果回调给网页
 
           if (str == 'ok') {
-            await wvc
-                ?.evaluateJavascript(jmh.success("你选择了OK"));
+            await jmh.success("你选择了OK");
           } else {
-            await wvc?.evaluateJavascript(jmh.error("你选了no!!!"));
+            await jmh.error("你选了no!!!");
           }
         }));
 
