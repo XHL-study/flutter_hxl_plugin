@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_js_bridge_helper/javascript_messasge_helper.dart';
 import 'package:webview_js_bridge_helper/webview_js_bridge_helper.dart';
 class WebViewPage extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _WebViewPageState extends State<WebViewPage> {
 
   TextEditingController? tec;
 
-  WebviewFlutterJsBridgeIntercept? wfji;
+  WebviewJsBridgeHelper? wfji;
 
   @override
   void initState() {
@@ -30,7 +31,7 @@ class _WebViewPageState extends State<WebViewPage> {
     tec?.value = TextEditingValue(
         text: 'http://127.0.0.1:8808/test/test.html');
 
-    wfji = WebviewFlutterJsBridgeIntercept();
+    wfji = WebviewJsBridgeHelper();
   }
 
   List<JavascriptChannel> _jsChanelApi(BuildContext context) {
@@ -39,7 +40,7 @@ class _WebViewPageState extends State<WebViewPage> {
     chanelList.add(JavascriptChannel(
         name: 'showDialog',
         onMessageReceived: (JavascriptMessage message) async {
-          Map<String, dynamic> node = json.decode(message.message);
+          JavascriptMessageHelper jmh = JavascriptMessageHelper(message);
           dynamic str = await showDialog(
             context: context,
             builder: (c) {
@@ -62,7 +63,7 @@ class _WebViewPageState extends State<WebViewPage> {
                   content: Container(
                     width: 200,
                     height: 100,
-                    child: Text("$node"),
+                    child: Text("${jmh.message}"),
                     color: Colors.grey,
                   ),
                 ),
@@ -71,12 +72,12 @@ class _WebViewPageState extends State<WebViewPage> {
           );
 
           //把结果回调给网页
-          String callback = node['callback'];
+
           if (str == 'ok') {
             await wvc
-                ?.evaluateJavascript('window.$callback.success("你选择了 ok");');
+                ?.evaluateJavascript(jmh.success("你选择了OK"));
           } else {
-            await wvc?.evaluateJavascript('window.$callback.error("你选了no!!!")');
+            await wvc?.evaluateJavascript(jmh.error("你选了no!!!"));
           }
         }));
 

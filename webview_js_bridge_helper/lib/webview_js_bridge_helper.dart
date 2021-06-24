@@ -5,7 +5,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 ///
 ///  webView_flutter Communication channel Intercept
 ///
-class WebviewFlutterJsBridgeIntercept {
+class WebviewJsBridgeHelper {
   List<String>? channelNames;
   WebViewController? webViewController;
 
@@ -13,7 +13,7 @@ class WebviewFlutterJsBridgeIntercept {
   final String jsHelper =
   '''function RegisterChannelToHtml(b){window.flutterChannelApis=b;window.__flutterChanneIsRegister="1";var a=this;(b||[]).forEach(function(c){a.__mockPostMessage(c)})}RegisterChannelToHtml.prototype.__mockPostMessage=function(b){var a=this;var c=window[b];window[b]=Object.create(c);var d=window[b].postMessage;window[b].postMessage=function(e){e.callback="flutter_callback_"+Date.now();window[e.callback]={success:function(f){return e.success&&e.success(f)},error:function(f){return e.error&&e.error(f)}};return c.postMessage(JSON.stringify(e))}};''';
 
-  WebviewFlutterJsBridgeIntercept();
+  WebviewJsBridgeHelper();
 
   ///
   /// get all channel names
