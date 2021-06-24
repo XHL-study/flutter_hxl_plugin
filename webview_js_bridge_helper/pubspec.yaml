@@ -1,7 +1,7 @@
 name: webview_js_bridge_helper
 description: A new Flutter package with webview_flutter js bridge helper.
 version: 0.0.1
-homepage:
+homepage: https://github.com/XHL-study/flutter_hxl_plugin/tree/master/webview_js_bridge_helper
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
