@@ -2,8 +2,6 @@
 
 A new Flutter package with webview_flutter js bridge helper.
 
-# Getting Started
-
 # install 
     webview_js_bridge_helper:
     git:
