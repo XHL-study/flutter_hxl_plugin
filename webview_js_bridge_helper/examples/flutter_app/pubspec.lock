@@ -160,8 +160,8 @@ packages:
     dependency: "direct main"
     description:
       path: webview_js_bridge_helper
-      ref: "0.0.5"
-      resolved-ref: "3d7a42b71e7a3308a2d88f682f76eeeeafd5eff8"
+      ref: "1.0.0"
+      resolved-ref: "2b99b3d904c3a44bab92e32cdf30b30af03dce21"
       url: "git://github.com/XHL-study/flutter_hxl_plugin.git"
     source: git
     version: "0.0.1"

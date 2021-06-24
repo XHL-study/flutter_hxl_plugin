@@ -33,7 +33,7 @@ dependencies:
     git:
       url: git://github.com/XHL-study/flutter_hxl_plugin.git
       path: webview_js_bridge_helper
-      ref: 0.0.5  # some tag
+      ref: 1.0.0  # some tag
 
 dev_dependencies:
   flutter_test:
