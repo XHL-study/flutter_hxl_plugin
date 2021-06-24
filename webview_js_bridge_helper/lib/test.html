@@ -55,12 +55,10 @@
 					name: "哈哈"
 				},
 				success: function(res) {
-					alert(res);
 					console.log('flutter1 成功');
 					document.querySelector('#textarea').value = "flutter1 成功，" + res;
 				},
 				error: function(res) {
-					alert(res);
 					console.log('flutter1 失败');
 					document.querySelector('#textarea').value = "flutter1 失败，" + res;
 				}
@@ -73,11 +71,11 @@
 				},
 				success: function(res) {
 					console.log('flutter2 成功');
-					// document.querySelector('#textarea').value = "flutter2 成功，" + res;
+					document.querySelector('#textarea').value = "flutter2 成功，" + res;
 				},
 				error: function(res) {
 					console.log('flutter2 失败');
-					// document.querySelector('#textarea').value = "flutter2 失败，" + res;
+					document.querySelector('#textarea').value = "flutter2 失败，" + res;
 				}
 			})
 		}
