@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:webviewjsbridgehelper/webviewjsbridgehelper.dart';
+import 'package:webview_js_bridge_helper/webview_js_bridge_helper.dart';
 class WebViewPage extends StatefulWidget {
   @override
   _WebViewPageState createState() => _WebViewPageState();
