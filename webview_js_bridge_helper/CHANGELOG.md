@@ -6,7 +6,7 @@
 
 * TODO: plugin rename webview_js_bridge_helper
 
-## 0.0.3
+## 0.0.4
 
 * TODO:
     add javascript_messasge_helper.dart
